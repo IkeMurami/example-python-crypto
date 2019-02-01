@@ -1,0 +1,10 @@
+Сайт для факторизации чисел (крутой)
+http://factordb.com/index.php?query=12345678
+
+Алгоритмы факторизации
+Brent
+Ferma
+Pollard
+Williams
+Lenstra
+Quadratic sieve
