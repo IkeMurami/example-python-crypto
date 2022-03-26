@@ -1,4 +1,6 @@
-from stream.rc4 import RC4
+from .rc4 import RC4
+
+
 class State:
     def __init__(self, m):
         self.i = 0

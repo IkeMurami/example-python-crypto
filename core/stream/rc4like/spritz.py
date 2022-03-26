@@ -1,14 +1,18 @@
 import binascii
 
+
 def gcd(a, b):
     while a:
         a, b = b % a, a
     return b
+
+
 def Swap(S, i, j):
     a = S[i]
     S[i] = S[j]
     S[j] = a
     return S
+
 
 class SpritzCipher:
     def __init__(self, key, iv = None, n = 256):

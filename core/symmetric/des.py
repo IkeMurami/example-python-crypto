@@ -201,36 +201,3 @@ print(ds.encrypt('0123456789abcde7','0123456789abcdef'))
 print(ds.decrypt('c95744256a5ed31d','0123456789abcdef'))
 """
 #print(ds.encrypt('3596522dbc5b1ae9','f3f0eee1eef0eef1'))
-
-def ConstructString(n, ch1, ch2):
-    res = ''
-    for a in bin(n)[2:].zfill(16):
-        if a == '0':
-            res += ch1
-        if a == '1':
-            res += ch2
-    return res
-import test
-def FindKey(ot, ct):
-    l = list()
-    alpha = '0123456789abcdef'
-    for i in range(0, len(alpha)):
-        for j in range(i + 1, len(alpha)):
-            l.append((alpha[i], alpha[j]))
-
-    #ds = DES()
-    find = False
-    for pair in l:
-        if find:
-            break
-        for i in range(0, 65536):
-            k = ConstructString(i, pair[0], pair[1])
-
-            if test.des(bytearray.fromhex(k), test.ECB).decrypt(bytearray.fromhex(ct)) == ct:
-                print(k)
-                find = True
-                break
-
-FindKey('f1efebe8edf2e5f0', 'c3f781e52fd1f73f')
-print("not found")
-FindKey('eae0e2e0e1e0ede3', '0d43be18785622c0')

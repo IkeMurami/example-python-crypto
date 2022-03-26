@@ -11,6 +11,8 @@ class AffineCipher:
         for ch in m:
             res += self.alphabet[((ord(ch)-self.lowercase)*k[0]+k[1]) % k[2]]
         return res
+
+
 m = 'kqerejebcppcjcrkieacuzbkrvpkrbcibqcarbjcvfcupkriofkpacuzqepbkrxpeiieabdkpbcpfcdccafieabdkpbcpfeqpkazbkrhaibkapcciburccdkdccjcidfuixpafferbiczdfkabicbbenefcupjcvkabpcydccdpkbcocperkivkscpicbrkijpkabi'
 
 ac = AffineCipher()
